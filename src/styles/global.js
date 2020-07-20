@@ -1,6 +1,16 @@
 import { createGlobalStyle } from "styled-components";
+import PokemonSolid from "../assets/fonts/Pokemon-Solid.ttf";
+import PokemonHollow from "../assets/fonts/Pokemon-Hollow.ttf";
 
 export default createGlobalStyle`
+  @font-face {
+    font-family: PokemonSolid;
+    src: url(${PokemonSolid});
+  }
+  @font-face {
+    font-family: PokemonHollow;
+    src: url(${PokemonHollow});
+  }
   * {
     margin: 0;
     padding: 0;
@@ -20,6 +30,7 @@ export default createGlobalStyle`
   body {
     -webkit-font-smoothing: antialiased !important;
     font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Montserrat', sans-serif; */
     color: #5C5C5C;
     background-size: 300px;
     background-position: calc(100% + 105px) -112px;
@@ -74,8 +85,12 @@ export default createGlobalStyle`
       }
     }
   }
-  .input-group {
-    display: flex;
-    justify-content: space-between;
+  .poke-font {
+    font-family: PokemonHollow, sans-serif !important;
+    color: #fff;
+  }
+  .poke-font-bold {
+    font-family: PokemonSolid, sans-serif !important;
+    color: #fff;
   }
 `;
