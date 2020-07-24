@@ -5,13 +5,17 @@ import AppProvider from "./hooks";
 import Routes from "./routes";
 import GlobalStyles from "./styles/global";
 
+import { CurrentThemeProvider } from "./hooks/theme";
+
 function App() {
   return (
     <BrowserRouter>
-      <AppProvider>
-        <Routes />
-      </AppProvider>
-      <GlobalStyles />
+      <CurrentThemeProvider>
+        <AppProvider>
+          <Routes />
+        </AppProvider>
+        <GlobalStyles />
+      </CurrentThemeProvider>
     </BrowserRouter>
   );
 }

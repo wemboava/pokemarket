@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { usePokemonType } from "../../../hooks/pokemonType";
+import { useTheme } from "../../../hooks/theme";
 import { Container, List, Item } from "./styles";
 
 const PokemonsList = () => {
   const { types } = usePokemonType();
+  const { changeTheme } = useTheme();
   return (
     <Container>
       <List>
@@ -14,7 +16,7 @@ const PokemonsList = () => {
           </Item>
         </Link>
         {types.map((type) => (
-          <Link key={type.name} to={`/search?type=${type.name}`}>
+          <Link key={type.name} onClick={() => changeTheme(type.name)}>
             <Item withBgImage bgColor={type.color}>
               {type.name}
             </Item>

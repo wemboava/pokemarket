@@ -4,7 +4,7 @@ export const Container = styled.header`
   height: 60px;
   display: flex;
   align-items: center;
-  background: #3db798;
+  background: ${(props) => props.theme.color.primary};
   padding: 30px;
 
   .logo {
