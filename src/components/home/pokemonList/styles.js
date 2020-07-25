@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  width: fit-content;
   padding: 0px 20px 50px 20px;
 `;
 

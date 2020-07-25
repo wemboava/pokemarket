@@ -7,6 +7,7 @@ import { usePokemonType } from "../../hooks/pokemonType";
 import { Container, Content } from "./styles";
 import TypesList from "../../components/common/typesList";
 import PokemonsList from "../../components/home/pokemonList";
+import Cart from "../../components/cart";
 
 const Home = () => {
   const pokemonType = usePokemonType();
@@ -36,8 +37,9 @@ const Home = () => {
       <Header />
       <Content>
         <TypesList />
-        <div>
+        <div style={{ display: "flex" }}>
           <PokemonsList pokemons={pokemons} />
+          <Cart />
         </div>
       </Content>
     </Container>
